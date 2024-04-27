@@ -25,7 +25,7 @@ set /p "END_TIME=Enter END_TIME here: "
 
 REM This command runs yt-dlp, with the options specified (For example, this verison will fetch the best mp4 video available, or the best video if no mp4 available, and force a keyframe cut at specified times, on the specified video
 
-yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" --download-sections *%START_TIME%-%END_TIME% --force-keyframes-at-cuts %URL%
+yt-dlp -f best %URL% --download-sections "*%START_TIME%-%END_TIME%" --force-keyframes-at-cuts --concurrent-fragments 3
 
 echo .
 echo .
